@@ -1,0 +1,462 @@
+{
+  "stats": {
+    "suites": 7,
+    "tests": 7,
+    "passes": 5,
+    "pending": 0,
+    "failures": 2,
+    "start": "2021-04-03T20:39:51.266Z",
+    "end": "2021-04-03T20:40:16.383Z",
+    "duration": 15607,
+    "testsRegistered": 7,
+    "passPercent": 71.42857142857143,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f8ce88fa-b90b-4642-bf6f-f3da47d176d3",
+      "title": "",
+      "fullFile": "cypress/integration/api_smoke_test/orders_spec.js",
+      "file": "cypress/integration/api_smoke_test/orders_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "846e5aa3-3587-471a-9f46-d289530de508",
+          "title": "Orders Endpoint",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Delete needs authentication",
+              "fullTitle": "Orders Endpoint Delete needs authentication",
+              "timedOut": null,
+              "duration": 237,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getOrder(apiAuth.user, apiAuth.password);\ncy.deleteOrder(apiAuth.user, '', 401, false);",
+              "err": {
+                "message": "TypeError: Cannot read property 'id' of undefined",
+                "estack": "TypeError: Cannot read property 'id' of undefined\n    at Context.eval (http://52.91.136.217:8000/__cypress/tests?p=cypress/support/index.js:107:30)",
+                "diff": null
+              },
+              "uuid": "9d742cc8-6a17-4736-8f9f-ab2259fd9b31",
+              "parentUUID": "846e5aa3-3587-471a-9f46-d289530de508",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "9d742cc8-6a17-4736-8f9f-ab2259fd9b31"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 237,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "7cc476d2-c3ab-4f9d-a56f-f321baba05e1",
+      "title": "",
+      "fullFile": "cypress/integration/api_smoke_test/products_spec.js",
+      "file": "cypress/integration/api_smoke_test/products_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a4d9b13c-cdbf-4618-b6f9-d816485faa99",
+          "title": "Products Endpoint",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "First Product has SKU",
+              "fullTitle": "Products Endpoint First Product has SKU",
+              "timedOut": null,
+              "duration": 398,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  url: '/wp-json/wc/v3/products/',\n  auth: {\n    username: apiAuth.user,\n    password: apiAuth.password\n  }\n}).then(function (response) {\n  expect(response.body[0].sku).not.be.empty;\n});",
+              "err": {
+                "message": "AssertionError: expected '' not to be empty",
+                "estack": "AssertionError: expected '' not to be empty\n    at Context.eval (http://52.91.136.217:8000/__cypress/tests?p=cypress/integration/api_smoke_test/products_spec.js:122:42)",
+                "diff": null
+              },
+              "uuid": "62827fa1-d04b-4095-9fdf-305a9389ba0b",
+              "parentUUID": "a4d9b13c-cdbf-4618-b6f9-d816485faa99",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "62827fa1-d04b-4095-9fdf-305a9389ba0b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 398,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f6c75e7a-6680-4910-9f96-968d10dd8a5e",
+      "title": "",
+      "fullFile": "cypress/integration/ui_smoke_test/account_spec.js",
+      "file": "cypress/integration/ui_smoke_test/account_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "158bd9d8-154f-41a4-9b3a-31a61e62d6df",
+          "title": "Verify account",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User is able to login",
+              "fullTitle": "Verify account User is able to login",
+              "timedOut": null,
+              "duration": 2816,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_account.account.login(userInfo.username, userInfo.password);\ncy.contains('Hello egomez').should('be.visible');",
+              "err": {},
+              "uuid": "7bf00ad3-49c4-4535-bbe5-aad6704239ea",
+              "parentUUID": "158bd9d8-154f-41a4-9b3a-31a61e62d6df",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7bf00ad3-49c4-4535-bbe5-aad6704239ea"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2816,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "86fd5195-f651-4151-a58c-98ffdbe77d77",
+      "title": "",
+      "fullFile": "cypress/integration/ui_smoke_test/cart_spec.js",
+      "file": "cypress/integration/ui_smoke_test/cart_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "87f7912f-8c54-4851-b712-0d202e41ad1f",
+          "title": "Verify cart",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Delete from cart",
+              "fullTitle": "Verify cart Delete from cart",
+              "timedOut": null,
+              "duration": 3207,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_cart.cart.viewByUrl().remove();\ncy.contains('Your cart is currently empty').should('be.visible');",
+              "err": {},
+              "uuid": "c3bc389f-6046-4bf3-add7-4c03ff788579",
+              "parentUUID": "87f7912f-8c54-4851-b712-0d202e41ad1f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c3bc389f-6046-4bf3-add7-4c03ff788579"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3207,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "64e3a3a4-b15d-4c9e-9b93-5707d17926f6",
+      "title": "",
+      "fullFile": "cypress/integration/ui_smoke_test/order_spec.js",
+      "file": "cypress/integration/ui_smoke_test/order_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c66fbe31-c935-4754-b18d-ddd2095b5968",
+          "title": "Verify orders",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Creates order with a hoodie product",
+              "fullTitle": "Verify orders Creates order with a hoodie product",
+              "timedOut": null,
+              "duration": 5724,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_product.product.hoodie();\n_cart.cart.add().view().proceedToCheckout();\n_checkout.checkout.placeOrder();\ncy.contains('Order received').should('be.visible');",
+              "err": {},
+              "uuid": "c99d71c2-5559-4534-8ffe-d4c90467f2c9",
+              "parentUUID": "c66fbe31-c935-4754-b18d-ddd2095b5968",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c99d71c2-5559-4534-8ffe-d4c90467f2c9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5724,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "db88f612-a77f-414d-8638-ea5693af0c38",
+      "title": "",
+      "fullFile": "cypress/integration/ui_smoke_test/search_spec.js",
+      "file": "cypress/integration/ui_smoke_test/search_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6afb4d22-e2ac-4ae9-80d6-a9e6f21094da",
+          "title": "Verify search products",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Searches for Beanie and product is listed",
+              "fullTitle": "Verify search products Searches for Beanie and product is listed",
+              "timedOut": null,
+              "duration": 2484,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_home.home.open().search('Beanie');\ncy.get('.product_title').should('have.text', 'Beanie');",
+              "err": {},
+              "uuid": "18fd4774-1075-4f35-ab22-aa2a52b1c5fe",
+              "parentUUID": "6afb4d22-e2ac-4ae9-80d6-a9e6f21094da",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "18fd4774-1075-4f35-ab22-aa2a52b1c5fe"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2484,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "ab1d5252-651d-4ca3-88f4-a79a46b2f1e1",
+      "title": "",
+      "fullFile": "cypress/integration/api_smoke_test/heath_check_spec.js",
+      "file": "cypress/integration/api_smoke_test/heath_check_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "70e19d33-159e-4f24-895b-9dc27dab894c",
+          "title": "API Health Check",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "API Index returns 200",
+              "fullTitle": "API Health Check API Index returns 200",
+              "timedOut": null,
+              "duration": 741,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('/wp-json/wc/v3').its('status').should('eq', 200);",
+              "err": {},
+              "uuid": "e2fa3a6f-19f4-4aa9-9053-502f09c938a1",
+              "parentUUID": "70e19d33-159e-4f24-895b-9dc27dab894c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e2fa3a6f-19f4-4aa9-9053-502f09c938a1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 741,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

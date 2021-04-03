@@ -1,0 +1,10 @@
+{
+    "baseUrl": "http://52.91.136.217:8000/",
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile": "cypress/config/reporter-config.json"
+    },
+    "video": false,
+    "screenshotOnRunFailure": false,
+    "chromeWebSecurity": false
+}
